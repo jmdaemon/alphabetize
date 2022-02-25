@@ -2,7 +2,7 @@
   :version "0.1.0"
   :author "Joseph Diza <josephm.diza@gmail.com>"
   :license "AGPLv3"
-  :depends-on ()
+  :depends-on ("for" "unix-opts")
   :components ((asdf:module "src"
                 :components
                 ((:file "alphabetize"))))
