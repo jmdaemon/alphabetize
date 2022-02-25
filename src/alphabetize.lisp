@@ -4,32 +4,17 @@
   (:export :main))
 (in-package :alphabetize)
 
-;(require :for)
 (require "for")
 (require "unix-opts")
-
-;(defparameter strings (list "#include <pcre.h>"
-                       ;"#include <stdlib.h>"
-                       ;"#include <string.h>"
-                       ;"#include <math.h>"
-                       ;"#include <argp.h>"
-                       ;"#include <stdio.h>"
-                       ;"#include <stdbool.h>"))
 
 (defun alphabetize(strings)
   "Lexicographically alphabetizes a list of strings"
   (sort strings #'sb-unicode:unicode<))
 
-;(defparameter sorted (sort strings #'sb-unicode:unicode<))
-;(defparameter sorted (alphabetize strings))
-
 (defun display(strings)
   "Shows the sorted list of strings delimited by new lines"
   (for:for ((str over strings))
   (format t "~a~%" str)))
-  ;(format t "~{~a~^ ~}~%" str)))
-
-;(display sorted)
 
 (defun show-usage ()
   "Shows the usage of the binary"
@@ -54,9 +39,8 @@
     (opts:get-opts (uiop:command-line-arguments))
     (if (getf options :help)
         (show-usage))
-    (defparameter words (sb-unicode:words (format nil "~{~a ~}" free-args)))
+    (defparameter words free-args)
     (setf strings (remove " " words :test 'equal)))
 
   ; Display the lexicographically ordered list
-  (display (alphabetize strings))
-  )
+  (display (alphabetize strings)))
