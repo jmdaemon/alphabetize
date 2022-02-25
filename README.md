@@ -23,6 +23,19 @@ $ alphabetize \
 #include <string.h>
 ```
 
+or
+
+``` bash
+$ alphabetize -f "tests/file.txt"
+"#include <argp.h>"
+"#include <math.h>"
+"#include <pcre.h>"
+"#include <stdbool.h>"
+"#include <stdio.h>"
+"#include <stdlib.h>"
+"#include <string.h>"
+```
+
 ## Installation
 
 Run `make build` and `sudo make install` to install alphabetize to `/usr/local/bin/`
