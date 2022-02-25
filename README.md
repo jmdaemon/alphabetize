@@ -13,6 +13,14 @@ $ alphabetize \
     "#include <argp.h>" \
     "#include <stdio.h>" \
     "#include <stdbool.h>" \
+
+#include <argp.h>
+#include <math.h>
+#include <pcre.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 ```
 
 ## Installation
