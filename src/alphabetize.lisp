@@ -1,7 +1,7 @@
 (defpackage alphabetize
   (:use :cl)
   (:documentation "Alphabetizes lists or characters")
-  (:export :main))
+  (:export :main :alphabetize))
 (in-package :alphabetize)
 
 (require "for")
