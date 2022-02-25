@@ -6,6 +6,7 @@
 
 (require "for")
 (require "unix-opts")
+(require "uiop")
 
 (defun alphabetize(strings)
   "Lexicographically alphabetizes a list of strings"
@@ -31,7 +32,12 @@
     (:name :help
            :description "Show this help text"
            :short #\h
-           :long "help"))
+           :long "help")
+    (:name :filepath
+           :description "File to alphabetize"
+           :short #\f
+           :long "filepath")
+    )
 
   (defparameter strings nil)
   ; Parse the command line options
@@ -39,6 +45,11 @@
     (opts:get-opts (uiop:command-line-arguments))
     (if (getf options :help)
         (show-usage))
+    (if (getf options :filepath)
+        (progn
+          (defparameter file (car free-args))
+          (display (alphabetize (uiop:read-file-lines (uiop:native-namestring file))))
+          (opts:exit)))
     (defparameter words free-args)
     (setf strings (remove " " words :test 'equal)))
 
