@@ -1,4 +1,4 @@
-# Alphabetize
+# Alphasort
 
 Lexicographically orders lists of strings and imports.
 
