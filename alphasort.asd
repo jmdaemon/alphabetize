@@ -1,5 +1,5 @@
 (asdf:defsystem "alphasort"
-  :version "0.1.1"
+  :version "1.0.0"
   :author "Joseph Diza <josephm.diza@gmail.com>"
   :license "AGPLv3"
   :depends-on ("for" "unix-opts")
