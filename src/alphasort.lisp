@@ -1,15 +1,15 @@
-(defpackage alphabetize
+(defpackage alphasort
   (:use :cl)
   (:documentation "Alphabetizes lists or characters")
-  (:export :main :alphabetize))
-(in-package :alphabetize)
+  (:export :main :alphasort))
+(in-package :alphasort)
 
 (require "for")
 (require "unix-opts")
 (require "uiop")
 
-(defun alphabetize(strings)
-  "Lexicographically alphabetizes a list of strings"
+(defun alphasort(strings)
+  "Lexicographically alphasorts a list of strings"
   (sort strings #'sb-unicode:unicode<))
 
 (defun display(strings)
@@ -34,7 +34,7 @@
            :short #\h
            :long "help")
     (:name :filepath
-           :description "File to alphabetize"
+           :description "File to alphasort"
            :short #\f
            :long "filepath")
     )
@@ -48,10 +48,10 @@
     (if (getf options :filepath)
         (progn
           (defparameter file (car free-args))
-          (display (alphabetize (uiop:read-file-lines (uiop:native-namestring file))))
+          (display (alphasort (uiop:read-file-lines (uiop:native-namestring file))))
           (opts:exit)))
     (defparameter words free-args)
     (setf strings (remove " " words :test 'equal)))
 
   ; Display the lexicographically ordered list
-  (display (alphabetize strings)))
+  (display (alphasort strings)))

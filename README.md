@@ -5,14 +5,14 @@ Lexicographically orders lists of strings and imports.
 ## Usage
 
 ``` bash
-$ alphabetize \
+$ alphasort \
     "#include <pcre.h>" \
     "#include <stdlib.h>" \
     "#include <string.h>" \
     "#include <math.h>" \
     "#include <argp.h>" \
     "#include <stdio.h>" \
-    "#include <stdbool.h>" \
+    "#include <stdbool.h>"
 
 #include <argp.h>
 #include <math.h>
@@ -26,7 +26,7 @@ $ alphabetize \
 or
 
 ``` bash
-$ alphabetize -f "tests/file.txt"
+$ alphasort -f "tests/file.txt"
 "#include <argp.h>"
 "#include <math.h>"
 "#include <pcre.h>"
@@ -38,4 +38,4 @@ $ alphabetize -f "tests/file.txt"
 
 ## Installation
 
-Run `make build` and `sudo make install` to install alphabetize to `/usr/local/bin/`
+Run `make build` and `sudo make install` to install alphasort to `/usr/local/bin/`

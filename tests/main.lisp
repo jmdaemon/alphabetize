@@ -1,18 +1,18 @@
-(defpackage alphabetize/tests/main
+(defpackage alphasort/tests/main
   (:use :cl
-        :alphabetize
+        :alphasort
         :rove))
-(in-package :alphabetize/tests/main)
+(in-package :alphasort/tests/main)
 
-;; NOTE: To run this test file, execute `(asdf:test-system :alphabetize)' in your Lisp.
+;; NOTE: To run this test file, execute `(asdf:test-system :alphasort)' in your Lisp.
 
-(deftest test-alphabetize-words
-  (testing "Should alphabetize words without whitespace (aaaa bbbb cccc)"
+(deftest test-alphasort-words
+  (testing "Should alphasort words without whitespace (aaaa bbbb cccc)"
     (defparameter strings (list "bbbb" "cccc" "aaaa"))
-      (ok (equal (alphabetize:alphabetize strings) (list "aaaa" "bbbb" "cccc")))))
+      (ok (equal (alphasort:alphasort strings) (list "aaaa" "bbbb" "cccc")))))
 
-(deftest test-alphabetize-imports ()
-  (testing "Should alphabetize words without whitespace (aaaa bbbb cccc)"
+(deftest test-alphasort-imports ()
+  (testing "Should alphasort words without whitespace (aaaa bbbb cccc)"
     (defparameter strings
       (list
         "#include <pcre.h>"
@@ -22,7 +22,7 @@
         "#include <argp.h>"
         "#include <stdio.h>"
         "#include <stdbool.h>"))
-    (ok (equal (alphabetize:alphabetize strings)
+    (ok (equal (alphasort:alphasort strings)
                (list
                  "#include <argp.h>"
                  "#include <math.h>"

@@ -1,5 +1,5 @@
 LISP ?= sbcl
-EXE = alphabetize
+EXE = alphasort
 QL = /usr/lib/quicklisp/setup.lisp
 
 BIN_PREFIX = bin
